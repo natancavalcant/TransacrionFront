@@ -1,0 +1,29 @@
+.headerContainer {
+    height: 200px;
+    width: 100%;
+
+    background-color: lightgreen;
+}
+
+.headerContent {
+    height: 200px;
+    max-width: 1080px;
+
+    margin: 0 auto;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        color: white;
+        cursor: pointer;
+
+        text-shadow: 0 0 2px green;
+    }
+}
+

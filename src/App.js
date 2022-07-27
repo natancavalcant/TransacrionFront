@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Header } from "./componets/header";
+
+import {ChakraProvider} from "@chakra-ui/react"
+import { Transactions } from "./componets/transactions";
+
+import { useDisclosure } from "@chakra-ui/react";
+
 
 function App() {
+  //são os controladores do modal, como ele é aberto pelo header convém importar um nível acima.
+  const { isOpen, onOpen, onClose } = useDisclosure(); 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // provedor de estilos do Chakra
+    // chamada do componente de header e a tabela de transações
+    <ChakraProvider>
+      <Header onOpen={onOpen}/> 
+      <Transactions isOpen={isOpen} onClose={onClose}/>
+    </ChakraProvider>
   );
 }
 
